@@ -1,0 +1,233 @@
+// import nullstyle
+@import "_nullstyle";
+/*---------Налаштування адаптивного відображення за трьома брейкпойнтами-----------*/
+@import "_breakpointDesktopFirst";
+.wrapper {
+    display: flex;
+    min-height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+.main {
+    flex: 1 1 100%;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    box-shadow: #595959 0px 0px 15px 5px;
+}
+/*Тут вказується максимальний розмір обмежуючого контейнера контенту*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Right part position  or left part position. You can swith order of placement  */
+.main-content {
+    order: 2;
+    margin: 40px;
+    flex: 1 1 77%;
+		// .main-content__item
+
+		&__item {
+            margin: 0 0 40px;
+		}
+}
+/* Left part position  or right part position. You can swith order of placement  */
+.sidebar {
+
+    // .sidebar__item
+
+    &__item {
+    }
+}
+.about-user {
+    max-width: 100%;
+
+		// .about-user__profession
+
+		&__profession {
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 40px;
+		}
+
+		// .about-user__user-name
+
+		&__user-name {
+            font-size: 45px;
+            font-weight: bold;
+            margin: 0 0 40px 0;
+		}
+
+		// .about-user__text
+
+		&__text {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color:#595959;
+		}
+}
+.projects {
+
+		// .projects__title
+
+		&__title {
+		}
+
+		// .projects__list
+
+		&__list {
+		}
+}
+
+
+.work {
+
+		// .work__title
+
+		&__title {
+		}
+
+		// .work__company
+
+		&__company {
+		}
+}
+.company {
+
+		// .company__sub-title
+
+		&__sub-title {
+		}
+
+		// .company__caption
+
+		&__caption {
+		}
+
+		// .company__list
+
+		&__list {
+		}
+}
+
+.education {
+
+		// .education__title
+
+		&__title {
+		}
+
+		// .education__sub-title
+
+		&__sub-title {
+		}
+
+		// .education__department-direction
+
+		&__department-direction {
+		}
+
+		// .education__caption
+
+		&__caption {
+		}
+}
+.container-education {
+}
+
+.photo {
+}
+.contacts {
+
+		// .contacts__title
+
+		&__title {
+		}
+
+		// .contacts__item
+
+		&__item {
+		}
+}
+.title-side {
+}
+.abbr {
+}
+.tech-skills {
+
+		// .tech-skills__title
+
+		&__title {
+		}
+
+		// .tech-skills__list
+
+		&__list {
+		}
+}
+.list-side {
+}
+.soft-skills {
+
+		// .soft-skills__title
+
+		&__title {
+		}
+
+		// .soft-skills__list
+
+		&__list {
+		}
+}
+.certificate {
+
+		// .certificate__item
+
+		&__item {
+		}
+}
+.certificate-title {
+}
+.container-certificate {
+}
+// Fonts format Style for all title , sub-title (*and lists on the page in main block exept list of Project block)
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
+.sub-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.list{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0  0 0 15px;
+}
+.list li::before{
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background-color: #595959;
+    margin: 0 10px 3px -14px;
+}
+/* Styles for all accented elements any text on the page */
+.accent{
+    color:#FB6D3A;
+}
+.thin{
+    font-weight: normal;
+}
+.small{
+    color:#A8A8A8;
+    line-height: 14.63px;
+    font-size: 12px;
+}

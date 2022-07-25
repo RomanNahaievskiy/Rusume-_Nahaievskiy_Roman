@@ -1,0 +1,91 @@
+/* Нижче приведено 3 медіазапити , які обмежують контейнер із контентом*/
+/*Перший брейкпойнт, якщо екран менше 1200 пікс - контент обмежиться шириною в 970 пікс*/
+@media (max-width:1200px) {
+    .container{
+        max-width: 970px;
+    }
+    
+}
+/*Другий брейкпойнт, якщо екран менше 992 пікс - контент обмежиться шириною в 750 пікс*/
+@media (max-width:992px) {
+    .container{
+        max-width: 750px;
+    }
+    .container-certificate{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .certificate__item{
+        max-width: 100%;
+        object-fit: cover;
+    }
+    .certificate__item:hover{
+        display: block;
+        height: auto;
+        width: 350px;
+        margin: 0;
+        box-shadow: #FB6D3A 0px 0px 8px 3px;
+        transition: all;
+        transition-duration: 0.3s;
+        transition-delay:  0.2s;
+    }
+    
+}
+/*Третій брейкпойнт, якщо екран менше 767 пікс - контент не обмежиться шириною (він займе увесь екран) , а вказаний внутрішній відступ контейнера (padding) буде присутнім, як  ів попередніх брейкпойнтах*/
+@media (max-width:767px) {
+    .container{
+        max-width: none;
+        flex-direction: column;
+    }
+    .sidebar{
+        flex: 1 1 100%;
+        margin: 0px;
+    
+    }
+    .sidebar__item{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .poto{
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 50%;
+        box-shadow: #E5E5E5 0px 0px 5px 2px;
+        transition: margin 1s;
+        transition-duration: 1s;
+        transition-delay: margin 1.5s;
+    }
+    .photo:hover{
+        margin: 0px 0px 0px 0px;
+        border-radius: 20%;
+        width: 60%;
+        box-shadow: #FB6D3A 0px 0px 8px 3px;
+        transition: all;
+        transition-duration: 1s;
+        
+    }
+    .container-certificate{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .certificate__item{
+        max-width: 100%;
+        object-fit: cover;
+    }
+    .certificate__item:hover{
+        display: block;
+        height: auto;
+        width: 350px;
+        margin: 0;
+        box-shadow: #FB6D3A 0px 0px 8px 3px;
+        transition: all;
+        transition-duration: 0.3s;
+        transition-delay:  0.2s;
+    }
+    
+}

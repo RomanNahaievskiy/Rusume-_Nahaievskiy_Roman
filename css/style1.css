@@ -1,0 +1,318 @@
+@charset "UTF-8";
+/*null style*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--------------------*/
+/*---------Налаштування адаптивного відображення за трьома брейкпойнтами-----------*/
+/* Нижче приведено 3 медіазапити , які обмежують контейнер із контентом*/
+/*Перший брейкпойнт, якщо екран менше 1200 пікс - контент обмежиться шириною в 970 пікс*/
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+}
+
+/*Другий брейкпойнт, якщо екран менше 992 пікс - контент обмежиться шириною в 750 пікс*/
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+  .container-certificate {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .certificate__item {
+    max-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .certificate__item:hover {
+    display: block;
+    height: auto;
+    width: 350px;
+    margin: 0;
+    -webkit-box-shadow: #FB6D3A 0px 0px 8px 3px;
+            box-shadow: #FB6D3A 0px 0px 8px 3px;
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+}
+
+/*Третій брейкпойнт, якщо екран менше 767 пікс - контент не обмежиться шириною (він займе увесь екран) , а вказаний внутрішній відступ контейнера (padding) буде присутнім, як  ів попередніх брейкпойнтах*/
+@media (max-width: 767px) {
+  .container {
+    max-width: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .sidebar {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+    margin: 0px;
+  }
+  .sidebar__item {
+    margin: 0 auto;
+    text-align: center;
+  }
+  .poto {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 50%;
+    -webkit-box-shadow: #E5E5E5 0px 0px 5px 2px;
+            box-shadow: #E5E5E5 0px 0px 5px 2px;
+    -webkit-transition: margin 1s;
+    transition: margin 1s;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+    -webkit-transition-delay: margin 1.5s;
+            transition-delay: margin 1.5s;
+  }
+  .photo:hover {
+    margin: 0px 0px 0px 0px;
+    border-radius: 20%;
+    width: 60%;
+    -webkit-box-shadow: #FB6D3A 0px 0px 8px 3px;
+            box-shadow: #FB6D3A 0px 0px 8px 3px;
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 1s;
+            transition-duration: 1s;
+  }
+  .container-certificate {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .certificate__item {
+    max-width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .certificate__item:hover {
+    display: block;
+    height: auto;
+    width: 350px;
+    margin: 0;
+    -webkit-box-shadow: #FB6D3A 0px 0px 8px 3px;
+            box-shadow: #FB6D3A 0px 0px 8px 3px;
+    -webkit-transition: all;
+    transition: all;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
+    -webkit-transition-delay: 0.2s;
+            transition-delay: 0.2s;
+  }
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  background-color: #FFFFFF;
+  margin: 0 auto;
+  -webkit-box-shadow: #595959 0px 0px 15px 5px;
+          box-shadow: #595959 0px 0px 15px 5px;
+}
+
+/*Тут вказується максимальний розмір обмежуючого контейнера контенту*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/* Right part position  or left part position. You can swith order of placement  */
+.main-content {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin: 40px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 77%;
+          flex: 1 1 77%;
+}
+
+.main-content__item {
+  margin: 0 0 40px;
+}
+
+/* Left part position  or right part position. You can swith order of placement  */
+.about-user {
+  max-width: 100%;
+}
+
+.about-user__profession {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.about-user__user-name {
+  font-size: 45px;
+  font-weight: bold;
+  margin: 0 0 40px 0;
+}
+
+.about-user__text {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #595959;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sub-title {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 40px;
+}
+
+.list {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0  0 0 15px;
+}
+
+.list li::before {
+  content: '';
+  display: inline-block;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: #595959;
+  margin: 0 10px 3px -14px;
+}
+
+/* Styles for all accented elements any text on the page */
+.accent {
+  color: #FB6D3A;
+}
+
+.thin {
+  font-weight: normal;
+}
+
+.small {
+  color: #A8A8A8;
+  line-height: 14.63px;
+  font-size: 12px;
+}
