@@ -1,0 +1,480 @@
+/*Обнуление*/
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+*,*:before,*:after{
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+
+nav,footer,header,aside{display: block;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+/*--------------------*/
+
+/*---------Налаштування адаптивного відображення за трьома брейкпойнтами-----------*/
+
+
+.wrapper {
+    display: flex;
+    min-height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+}
+
+/*Тут вказується максимальний розмір обмежуючого контейнера контенту*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+}
+
+/* Нижче приведено 3 медіазапити , які обмежують контейнер із контентом*/
+/*Перший брейкпойнт, якщо екран менше 1200 пікс - контент обмежиться шириною в 970 пікс*/
+@media (max-width:1200px) {
+    .container{
+        max-width: 970px;
+    }
+    
+}
+/*Другий брейкпойнт, якщо екран менше 992 пікс - контент обмежиться шириною в 750 пікс*/
+@media (max-width:992px) {
+    .container{
+        max-width: 750px;
+    }
+    .container-certificate{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .certificate__item{
+        max-width: 100%;
+        object-fit: cover;
+    }
+    .certificate__item:hover{
+        display: block;
+        height: auto;
+        width: 350px;
+        margin: 0;
+        box-shadow: #FB6D3A 0px 0px 8px 3px;
+        transition: all;
+        transition-duration: 0.3s;
+        transition-delay:  0.2s;
+    }
+    
+}
+/*Третій брейкпойнт, якщо екран менше 767 пікс - контент не обмежиться шириною (він займе увесь екран) , а вказаний внутрішній відступ контейнера (padding) буде присутнім, як  ів попередніх брейкпойнтах*/
+@media (max-width:767px) {
+    .container{
+        max-width: none;
+        flex-direction: column;
+    }
+    .sidebar{
+        flex: 1 1 100%;
+        margin: 0px;
+    
+    }
+    .sidebar__item{
+        margin: 0 auto;
+        text-align: center;
+    }
+    .poto{
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border-radius: 50%;
+        box-shadow: #E5E5E5 0px 0px 5px 2px;
+        transition: margin 1s;
+        transition-duration: 1s;
+        transition-delay: margin 1.5s;
+    }
+    .photo:hover{
+        margin: 0px 0px 0px 0px;
+        border-radius: 20%;
+        width: 60%;
+        box-shadow: #FB6D3A 0px 0px 8px 3px;
+        transition: all;
+        transition-duration: 1s;
+        
+    }
+    .container-certificate{
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .certificate__item{
+        max-width: 100%;
+        object-fit: cover;
+    }
+    .certificate__item:hover{
+        display: block;
+        height: auto;
+        width: 350px;
+        margin: 0;
+        box-shadow: #FB6D3A 0px 0px 8px 3px;
+        transition: all;
+        transition-duration: 0.3s;
+        transition-delay:  0.2s;
+    }
+    
+}
+
+
+body{
+    padding: 0px;
+    background-color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+}
+/* Style for all link */
+a, a:visited{
+    text-decoration: none;
+    color: #595959;
+}
+a:hover{
+    text-decoration: none;
+    color: #FB6D3A ;
+}
+/* Future adaptive menu-burger )) */
+/*.header {
+    display: none;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+.header::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #E5E5E5;
+    z-index: 2;
+}
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.header__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.header__logo {
+    flex: 0 0 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+.header__name{
+    flex: 0 0 400px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+}
+.header__logo img{
+    max-width: 100%;
+    display: block;
+}
+.header__burger {
+    display: none;
+}
+.header__menu {
+}
+
+.header__list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+.header__list li{
+    list-style: none;
+    margin: 0px 0px 0px 20px;
+}
+
+.header__link {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+}*/
+
+/* Styles  "main" */
+
+.main {
+    flex: 1 1 100%;
+    background-color: #FFFFFF;
+    margin: 0 auto;
+    box-shadow: #595959 0px 0px 15px 5px;
+    
+}
+/* Block "Main-content" */
+/* Right part position  or left part position. You can swith order of placement  */
+.main-content {
+    order: 2;
+    margin: 40px;
+    flex: 1 1 77.%;
+}
+/* style for all item of main-content */
+.main-content__item {
+    margin: 0 0 40px;
+}
+/* Block "About-user" */
+.about-user {
+    max-width: 100%;
+}
+.about-user__profession { 
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 40px;
+    
+}
+.about-user__user-name {
+    font-size: 45px;
+    font-weight: bold;
+    margin: 0 0 40px 0;
+}
+.about-user__text {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color:#595959;
+}
+/* Style for all title , sub-title (*and lists on the page in main block exept list of Project block) */
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
+.sub-title {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+}
+.list{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0  0 0 15px;
+}
+.list li::before{
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background-color: #595959;
+    margin: 0 10px 3px -14px;
+}
+/* Styles for all accented elements any text on the page */
+.accent{
+    color:#FB6D3A;
+}
+.thin{
+    font-weight: normal;
+}
+.small{
+    color:#A8A8A8;
+    line-height: 14.63px;
+    font-size: 12px;
+}
+
+/* Block "Project" */
+
+.projects {
+}
+.projects__title {
+    margin: 0 0 10px 0;
+}
+
+.projects__list {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 15px;
+
+}
+.projects__list {
+}
+
+/* Block "Work" */
+.work {
+}
+.work__title {
+}
+.work__company {
+}
+.company {
+}
+.company__sub-title {
+}
+
+.company__caption {
+}
+.company__list {
+    color:#595959;
+}
+
+/* Block "Education" */
+
+.education {
+}
+.container-education{
+}
+.education__title {
+}
+.education__sub-title {
+}
+.education__department-direction {
+}
+
+/* Block "Sidebar" */
+/* Left part position  or right part position. You can swith order of placement  */
+.sidebar {
+    order: 1;
+    flex: 1 0 33%;;
+    margin: 0 0 0 0;
+    background-color: #1E2939;
+    color: #E5E5E5;
+    padding: 40px 0 0 0 ;
+}
+.sidebar__item {
+    margin: 40px;
+}
+/* abbr in that case : C= Cellphone and E= @mail address */
+.abbr{
+    font-weight: bold;
+    line-height: 24px;
+}
+.photo {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 50%;
+    box-shadow: #E5E5E5 0px 0px 12px 2px;
+    transition: margin 1s;
+    transition-duration: 1s;
+    transition-delay: margin 1.5s;
+}
+/* a little bit animation */
+.photo:hover{
+    margin: 0px 0px 100px 35px;
+    border-radius: 20%;
+    width: 96%;
+    box-shadow: #FB6D3A 0px 0px 8px 3px;
+    transition: all;
+    transition-duration: 1s;
+    
+}
+
+.title-side {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+.list-side{
+    font-size: 14px;
+    line-height: 24px;
+}
+.list-side li::before{
+    content: '';
+    display: inline-block;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    background-color:#FB6D3A ;
+    margin: 0 8px 3px 0;
+    
+    
+}
+
+/* Block "Certificate" */
+.certificate {
+    display: flex;
+    flex-direction: column;
+}
+.container-certificate {
+    max-width: 370px;
+    object-fit: cover;
+    
+}
+.certificate__item {  
+    display: block; 
+    border: #A8A8A8 3px solid; 
+    height: 100px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin: 10px 0 10px 0;
+}
+.certificate__item img{
+    width: 100%;
+    object-fit:fill;
+}
+/* a little bit animation */
+.certificate__item:hover {
+    height: auto;
+    width: 160%;
+    margin: 50px 0 50px 0;
+    box-shadow: #FB6D3A 0px 0px 8px 3px;
+    transition: all;
+    transition-duration: 0.3s;
+    transition-delay:  0.2s;
+}
+.contacts {
+    
+}
+.contacts__title {
+}
+
+.contacts__item {
+}
+.tech-skills {
+}
+.tech-skills__title {
+}
+.tech-skills__list {
+}
+.soft-skills {
+}
+.soft-skills__title {
+}
+.soft-skills__list {
+}
+
+
+
